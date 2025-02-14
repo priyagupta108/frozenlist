@@ -201,7 +201,8 @@ jobs:
         path: dist
         pattern: ${{ needs.pre-setup.outputs.dists-artifact-name }}*
         merge-multiple: true
-
+    - name: Checkout repository
+      uses: actions/checkout@v4
     - name: Setup Python ${{ matrix.pyver }}
       id: python-install
       uses: actions/setup-python@v5
